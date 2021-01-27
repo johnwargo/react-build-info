@@ -4,15 +4,13 @@ const boxen = require('boxen');
 const chalk = require('chalk');
 const fs = require('fs');
 const path = require('path');
-// https://stackoverflow.com/questions/9153571/is-there-a-way-to-get-version-from-package-json-in-nodejs-code
-// const packageDotJSON = require('./package.json');
 
-const appName = 'Ionic Build Info';
+const appName = 'React Build Info';
 const blankStr = '';
 const buildDate = new Date(Date.now());
 const inputFile = path.join(process.cwd(), 'package.json');
-const outputFolder = path.join(process.cwd(), 'src/app');
-const outputFile = path.join(outputFolder, 'buildinfo.ts');
+const outputFolder = path.join(process.cwd(), 'src/');
+const outputFile = path.join(outputFolder, 'buildInfo.ts');
 
 function outputHighlighted(highlight: string, msg: string) {
     console.log(chalk.yellow(`${highlight}: `) + msg);

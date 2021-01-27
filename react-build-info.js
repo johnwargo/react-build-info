@@ -4,14 +4,12 @@ var boxen = require('boxen');
 var chalk = require('chalk');
 var fs = require('fs');
 var path = require('path');
-// https://stackoverflow.com/questions/9153571/is-there-a-way-to-get-version-from-package-json-in-nodejs-code
-// const packageDotJSON = require('./package.json');
-var appName = 'Ionic Build Info';
+var appName = 'React Build Info';
 var blankStr = '';
 var buildDate = new Date(Date.now());
 var inputFile = path.join(process.cwd(), 'package.json');
-var outputFolder = path.join(process.cwd(), 'src/app');
-var outputFile = path.join(outputFolder, 'buildinfo.ts');
+var outputFolder = path.join(process.cwd(), 'src/');
+var outputFile = path.join(outputFolder, 'buildInfo.ts');
 function outputHighlighted(highlight, msg) {
     console.log(chalk.yellow(highlight + ": ") + msg);
 }
@@ -47,7 +45,6 @@ console.log('\nWriting output file');
 var outputStr = 'export const buildInfo = {\n';
 outputStr += "  buildVersion: \"" + buildVersion + "\",\n";
 outputStr += "  buildDate: " + buildDate.getTime() + ",\n";
-outputStr += "  buildDateStr: \"" + buildDate + "\"\n";
 outputStr += '}';
 fs.writeFile(outputFile, outputStr, function (err, data) {
     if (err) {
