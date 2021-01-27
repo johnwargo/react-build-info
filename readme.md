@@ -74,7 +74,7 @@ To add this process, open your React project's `package.json` file and update th
 to:
 
 ```text
-"build": "npm version patch && react-build-info && ng build ",
+"build": "npm version patch && react-build-info && react-scripts build",
 ```
 
 The `npm version patch` part of the build step increments the patch version in the `package.json` file before calling `react-build-info`.
