@@ -1,7 +1,7 @@
 {
   "name": "react-build-info",
   "version": "0.0.0",
-  "description": "adds build info to an React project",
+  "description": "Adds build info to an React project",
   "main": "react-build-info.js",
   "bin": {
     "react-build-info": "react-build-info.js"

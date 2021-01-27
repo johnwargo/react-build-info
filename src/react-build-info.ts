@@ -10,7 +10,7 @@ const blankStr = '';
 const buildDate = new Date(Date.now());
 const inputFile = path.join(process.cwd(), 'package.json');
 const outputFolder = path.join(process.cwd(), 'src/');
-const outputFile = path.join(outputFolder, 'buildInfo.ts');
+const outputFile = path.join(outputFolder, 'buildInfo.js');
 
 function outputHighlighted(highlight: string, msg: string) {
     console.log(chalk.yellow(`${highlight}: `) + msg);
@@ -48,7 +48,7 @@ outputHighlighted('Build date', `${buildDate.toString()} (${buildDate.getTime().
 
 console.log('\nWriting output file');
 
-let outputStr = 'export const buildInfo = {\n';
+let outputStr = 'module.exports = {\n';
 outputStr += `  buildVersion: "${buildVersion}",\n`;
 outputStr += `  buildDate: ${buildDate.getTime()},\n`;
 outputStr += '}';
