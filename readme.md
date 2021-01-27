@@ -68,7 +68,7 @@ react-build-info
 To add this process, open your React project's `package.json` file and update the existing `build` script entry from:
 
 ```text
-"build": "ng build ",
+"build": "react-scripts build",
 ```
 
 to:
