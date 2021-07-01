@@ -57,15 +57,21 @@ export default App;
 
 ## Usage
 
-You can use the module from the command line or include it in your React project's build process.
-
 To generate an update to the project's `buildInfo.ts` file, open a terminal window, navigate to an React project, and execute the following command:
 
 ```shell
 react-build-info
 ```
 
-To add this process, open your React project's `package.json` file and update the existing `build` script entry from:
+For cloud builds, add the following to the project's `package.json` file:
+
+```json
+"devDependencies": {
+    "react-build-info": "^0.0.2"
+},
+```
+
+Next, add this process to the existing `build` script entry, changing:
 
 ```text
 "build": "react-scripts build",
@@ -79,7 +85,7 @@ to:
 
 The `npm version patch` part of the build step increments the patch version in the `package.json` file before calling `react-build-info`.
 
-*** 
+***
 
 You can find information on many different topics on my [personal blog](http://www.johnwargo.com). Learn about all of my publications at [John Wargo Books](http://www.johnwargobooks.com).
 
