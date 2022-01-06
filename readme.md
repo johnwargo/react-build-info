@@ -4,7 +4,7 @@ While building a desktop web application using React, I realized that for suppor
 
 ## Installation
 
-Install the module by opening a terminal window, navigating to a React project, and executing the following command:
+To install the module in your project, open a terminal window, navigate to a React project, and execute the following command:
 
 ```shell
 npm install --save-dev react-build-info
