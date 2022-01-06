@@ -57,7 +57,7 @@ export default App;
 
 ## Usage
 
-Add this process to the existing `build` script entry, changing:
+Open the project's `package.json` file and add this process to the existing `build` script entry, changing:
 
 ```text
 "build": "react-scripts build",
