@@ -4,13 +4,11 @@ While building a desktop web application using React, I realized that for suppor
 
 ## Installation
 
-Install the module by opening a terminal window and executing the following command:
+Install the module by opening a terminal window, navigating to a React project, and executing the following command:
 
 ```shell
-npm install g react-build-info
+npm install --save-dev react-build-info
 ```
-
-This installs the module at global scope, so its available anywhere. If you have a problem and read somewhere that you should use the `sudo` command along with the command shown above, you're getting bad advice, there's no reason to install npm modules using `sudo`.
 
 ## Operation
 
@@ -57,21 +55,7 @@ export default App;
 
 ## Usage
 
-To generate an update to the project's `buildInfo.ts` file, open a terminal window, navigate to an React project, and execute the following command:
-
-```shell
-react-build-info
-```
-
-For cloud builds, add the following to the project's `package.json` file:
-
-```json
-"devDependencies": {
-    "react-build-info": "^0.0.2"
-},
-```
-
-Next, add this process to the existing `build` script entry, changing:
+Add this process to the existing `build` script entry, changing:
 
 ```text
 "build": "react-scripts build",
@@ -84,6 +68,8 @@ to:
 ```
 
 The `npm version patch` part of the build step increments the patch version in the `package.json` file before calling `react-build-info`.
+
+With this in place, when you execute `npm run build` to build a production version of the app, `npm` will update the version number in the project's `package.json` file, build an updated version of the buildinfo.js file, then generate the production build of the app.
 
 ***
 
