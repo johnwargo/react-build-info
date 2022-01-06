@@ -28,11 +28,13 @@ import React from 'react';
 
 import buildInfo from './buildInfo';
 import './App.css';
+
+const buildDate = new Date(buildInfo.buildDate);
+
 class App extends React.Component {
 
   componentDidMount() {
     console.log(`Build Number: ${buildInfo.buildVersion}`);
-    const buildDate = new Date(buildInfo.buildDate);
     console.log(`Build Date: ${buildDate.toString()}`);
   }
 
